@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8"> <!-- utf-8 works for most cases -->
+    <meta name="viewport" content="width=device-width"> <!-- Forcing initial-scale shouldn't be necessary -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- Use the latest (edge) version of IE rendering engine -->
+    <meta name="x-apple-disable-message-reformatting">  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+    <title></title> <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700,800,900" rel="stylesheet">
+
+    <!-- CSS Reset : BEGIN -->
+    <style>
+        /* What it does: Remove spaces around the email design added by some email clients. */
+        /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+        html,
+body {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    background: #ffffff;
+}
+/* What it does: Stops email clients resizing small text. */
+* {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+/* What it does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+    margin: 0 !important;
+}
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table,
+td {
+    mso-table-lspace: 0pt !important;
+    mso-table-rspace: 0pt !important;
+}
+/* What it does: Fixes webkit padding issue. */
+table {
+    border-spacing: 0 !important;
+    border-collapse: collapse !important;
+    table-layout: fixed !important;
+    margin: 0 auto !important;
+}
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+    -ms-interpolation-mode:bicubic;
+}
+/* What it does: Prevents Windows 10 Mail from underlining links despite inline CSS. Styles for underlined links should be inline. */
+a {
+    text-decoration: none;
+}
+/* What it does: A work-around for email clients meddling in triggered links. */
+*[x-apple-data-detectors],  /* iOS */
+.unstyle-auto-detected-links *,
+.aBn {
+    border-bottom: 0 !important;
+    cursor: default !important;
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+/* What it does: Prevents Gmail from displaying a download button on large, non-linked images. */
+.a6S {
+    display: none !important;
+    opacity: 0.01 !important;
+}
+/* What it does: Prevents Gmail from changing the text color in conversation threads. */
+.im {
+    color: inherit !important;
+}
+/* If the above doesn't work, add a .g-img class to any image in question. */
+img.g-img + div {
+    display: none !important;
+}
+/* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+/* Create one of these media queries for each additional viewport size you'd like to fix */
+/* iPhone 4, 4S, 5, 5S, 5C, and 5SE */
+@media only screen and (min-device-width: 320px) and (max-device-width: 374px) {
+    u ~ div .email-container {
+        min-width: 320px !important;
+    }
+}
+/* iPhone 6, 6S, 7, 8, and X */
+@media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+    u ~ div .email-container {
+        min-width: 375px !important;
+    }
+}
+/* iPhone 6+, 7+, and 8+ */
+@media only screen and (min-device-width: 414px) {
+    u ~ div .email-container {
+        min-width: 414px !important;
+    }
+}
+    </style>
+
+    <!-- CSS Reset : END -->
+
+    <!-- Progressive Enhancements : BEGIN -->
+    <style>
+	    .primary{
+	background: #f5564e;
+}
+.bg_white{
+	background: #ffffff;
+}
+.bg_light{
+	background: #fafafa;
+}
+.bg_black{
+	background: #000000;
+}
+.bg_dark{
+	background: rgba(0,0,0,.8);
+}
+.email-section{
+	padding:2.5em;
+}
+/*BUTTON*/
+.btn{
+	padding: 5px 15px;
+	display: inline-block;
+}
+.button5 {
+  background-color: #fafafa;
+  border: 2px solid #555555;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  width: 223px;
+}
+.btn.btn-primary{
+	border-radius: 0px;
+	background: none;
+	color: none;
+  border: solid;
+  border-width: 5px;
+  border-color: #000000
+}
+.btn.btn-white{
+	border-radius: 5px;
+	background: #ffffff;
+	color: #000000;
+}
+.btn.btn-white-outline{
+	border-radius: 5px;
+	background: transparent;
+	border: 1px solid #fff;
+	color: #fff;
+}
+h1,h2,h3,h4,h5,h6{
+	font-family: 'Nunito Sans', sans-serif;
+	color: #000000;
+	margin-top: 0;
+}
+body{
+	font-family: 'Nunito Sans', sans-serif;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 1.8;
+	color: rgba(0,0,0,.4);
+}
+a{
+	color: #000000;
+}
+table{
+}
+/*LOGO*/
+.logo h1{
+	margin: 0;
+}
+.logo h1 a{
+	color: #000;
+	font-size: 20px;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-family: 'Nunito Sans', sans-serif;
+}
+.navigation{
+	padding: 0;
+}
+.navigation li{
+	list-style: none;
+	display: inline-block;;
+	margin-left: 5px;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+.navigation li a{
+	color: rgba(0,0,0,.6);
+}
+/*HERO*/
+.hero{
+	position: relative;
+	z-index: 0;
+}
+.hero .overlay{
+	position: absolute;
+  background: rgb(3,1,27);
+  background: linear-gradient(180deg, rgba(3,1,27,1) 0%, rgba(3,45,112,1) 35%, rgba(115,134,159,1) 100%);
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	z-index: -1;
+	opacity: .9;
+}
+.hero .icon{
+}
+.hero .icon a{
+	display: block;
+	width: 60px;
+	margin: 0 auto;
+}
+.hero .text{
+	color: rgba(255,255,255,.8);
+	padding: 0 4em;
+}
+.hero .text h2{
+	color: #ffffff;
+	font-size: 40px;
+	margin-bottom: 0;
+	line-height: 1.2;
+	font-weight: 900;
+}
+/*HEADING SECTION*/
+.heading-section{
+}
+.heading-section h2{
+	color: #000000;
+	font-size: 24px;
+	margin-top: 0;
+	line-height: 1.4;
+	font-weight: 700;
+}
+.heading-section .subheading{
+	margin-bottom: 20px !important;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(0,0,0,.4);
+	position: relative;
+}
+.heading-section .subheading::after{
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: -10px;
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #f5564e;
+	margin: 0 auto;
+}
+.heading-section-white{
+	color: rgba(255,255,255,.8);
+}
+.heading-section-white h2{
+	font-family:
+	line-height: 1;
+	padding-bottom: 0;
+}
+.heading-section-white h2{
+	color: #ffffff;
+}
+.heading-section-white .subheading{
+	margin-bottom: 0;
+	display: inline-block;
+	font-size: 13px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	color: rgba(255,255,255,.4);
+}
+.icon{
+	text-align: center;
+}
+.icon img{
+}
+/*SERVICES*/
+.services{
+	background: rgba(0,0,0,.03);
+}
+.text-services{
+	padding: 10px 10px 0;
+	text-align: center;
+}
+.text-services h3{
+	font-size: 16px;
+	font-weight: 600;
+}
+.services-list{
+	padding: 0;
+	margin: 0 0 10px 0;
+	width: 100%;
+	float: left;
+}
+.services-list .text{
+	width: 100%;
+	float: right;
+}
+.services-list h3{
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 18px;
+}
+.services-list p{
+	margin: 0;
+}
+/*DESTINATION*/
+.text-tour{
+	padding-top: 10px;
+}
+.text-tour h3{
+	margin-bottom: 0;
+}
+.text-tour h3 a{
+	color: #000;
+}
+/*BLOG*/
+.text-services .meta{
+	text-transform: uppercase;
+	font-size: 14px;
+}
+/*TESTIMONY*/
+.text-testimony .name{
+	margin: 0;
+}
+.text-testimony .position{
+	color: rgba(0,0,0,.3);
+}
+/*COUNTER*/
+.counter{
+	width: 100%;
+	position: relative;
+	z-index: 0;
+}
+.counter .overlay{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	content: '';
+	width: 100%;
+	background: #f1f1f1;
+	z-index: -1;
+	opacity: .9;
+}
+.counter-text{
+	text-align: center;
+}
+.counter-text .num{
+	display: block;
+	color: #ffffff;
+	font-size: 34px;
+	font-weight: 700;
+}
+.counter-text .name{
+	display: block;
+	color: rgba(255,255,255,.9);
+	font-size: 13px;
+}
+ul.social{
+	padding: 0;
+}
+ul.social li{
+	display: inline-block;
+}
+/*FOOTER*/
+.footer{
+	color: rgba(255,255,255,.5);
+}
+.footer .heading{
+	color: #ffffff;
+	font-size: 20px;
+}
+.footer ul{
+	margin: 0;
+	padding: 0;
+}
+.footer ul li{
+	list-style: none;
+	margin-bottom: 10px;
+}
+.footer ul li a{
+	color: rgba(255,255,255,1);
+}
+@media screen and (max-width: 500px) {
+	.icon{
+		text-align: left;
+	}
+	.text-services{
+		padding-left: 0;
+		padding-right: 20px;
+		text-align: left;
+	}
+
+  .BIIlogo{
+    width: 40%!important;
+    align:center;
+
+  }
+
+  .button5 {
+    background-color: #fafafa;
+    border: 2px solid #555555;
+    color: black;
+    padding: 10px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+    margin: 4px 2px;
+    width: 250px;
+  }
+}
+    </style>
+
+
+</head>
+
+<body width="100%" style="margin: 0; padding: 0 !important; mso-line-height-rule: exactly; background-color: #222222;">
+	<center style="width: 100%; background-color: #ffffff;">
+    <div style="display: none; font-size: 1px;max-height: 0px; max-width: 0px; opacity: 0; overflow: hidden; mso-hide: all; font-family: sans-serif;">
+      &zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;&zwnj;&nbsp;
+    </div>
+    <div style="max-width: 600px; margin: 0 auto;" class="email-container">
+    	<!-- BEGIN BODY -->
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+      	<tr>
+          <td valign="top" class="bg_white" style="padding: 1em 2.5em;">
+          	</td>
+	      </tr><!-- end tr -->
+				<tr>
+          <td valign="middle" class="hero bg_white" style="height: 350px;">
+          	<div class="overlay"></div>
+            <table>
+            	<tr>
+            		<td>
+
+                		<tr>
+
+                                        <br>
+
+                			<td width="40%" class="logo" align="center">
+                        <img src="https://www.wanyichow.com/email/BII.png" class="BIIlogo" align="center" padding="10px"width="40%"margin-top="15px";>
+      			          </td>
+<br>
+                		</tr>
+                	</table>
+            			<div class="text" style="text-align: center;">
+                    <br>
+            				<h2> Welcome to the Business Insider Intelligence Daily</h2>
+                    <p>You've made a <i> great decision</i>
+                     for yourself and your company by taking the first step to unlocking a wealth of
+                      content on digital transformation across industries. </span></p>
+            			</div>
+            		</td>
+            	</tr>
+            </table>
+          </td>
+	      </tr><!-- end tr -->
+	      <!-- end: tr -->
+	      <tr>
+		      <td class="bg_white">
+		        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+		        	<tr>
+					      <td class="bg_white">
+					        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+					          <tr>
+
+
+                        <td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0;
+                					padding-top: 25px;
+                					padding-right: 2px;"><img
+                				border="0" vspace="0" hspace="0" style="padding: 5; margin: 5; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;
+                					color: #000000;"
+                					src="https://www.wanyichow.com/email/graphic.jpg"
+                					alt="H" title="Highly compatible"
+                					width="120" height=""></td>
+
+                          <td align="center" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
+                            padding-top: 25px;
+                        color: #837e7e;
+                            font-family: sans-serif;" class="paragraph">
+
+                              <p style="color: #837e7e;padding: 15px 10px 20px;style="text-align: center;"">Business Insider Intelligence Daily is a free newsletter
+                              highlighting topics the Business Insider Intelligence research team finds interesting.</p>
+                          </td>
+                          <br>
+
+					            	<div class="heading-section" style="text-align:left; padding: 0 30px;">
+
+
+					            	</div>
+					            	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+					            		<tr>
+			                      <td valign="top" width="50%">
+			                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+
+			                        </table>
+			                      </td>
+			                    </tr>
+					            	</table>
+					            </td>
+					          </tr><!-- end: tr -->
+
+					        </table>
+
+					      </td>
+					    </tr><!-- end:tr -->
+		          <tr>
+			          <td valign="middle" class="counter" style="background-image: url(images/bg_1.jpg); background-size: cover; padding: 4em 0;">
+			          	<div class="overlay"></div>
+
+			            <table>
+                    <div class="heading-section" style="text-align: center; padding: 0 30px;">
+  		              	<h2>Here's how it works:</h2>
+  		              	 	</div>
+			            	<tr>
+			            		<td valign="middle" width="33.333%">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td class="counter-text">
+                              <img src="https://www.wanyichow.com/email/icon-1.png" width="29%" height="" alt="alt_text" border="0">
+                            	  <h1 style="margin: 10px; font-size: 15px; line-height: 30px; color: #837e7e; font-weight: normal;font-family: sans-serif;">Get our newsletter every weekday 5PM ET</h1>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+
+                      <td valign="middle" width="33.333%">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td class="counter-text">
+                              <img src="https://www.wanyichow.com/email/icon-2.png" width="29%" height="" alt="alt_text" border="0">
+                                <h1 style="margin: 10px; font-size: 15px; line-height: 30px; color: #837e7e; font-weight: normal;font-family: sans-serif;">Read the lastest industry highlights and in-depth data analysis</h1>
+                            </td>
+                          </tr>
+                        </table>
+                      </td><td valign="middle" width="33.333%">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td class="counter-text">
+                              <img src="https://www.wanyichow.com/email/icon-3.png" width="29%" height="" alt="alt_text" border="0">
+                            	  <h1 style="margin: 10px; font-size: 15px; line-height: 30px; color: #837e7e; font-weight: normal;font-family: sans-serif;">Like it? Share the smarts with your team</h1>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+			            	</tr>
+			            </table>
+			          </td>
+				      </tr><!-- end tr -->
+				      <tr>
+		            <td class="bg_white email-section">
+		            	<div class="heading-section" style="text-align: center; padding: 0 30px;">
+
+                    <h1 style="padding-top:25px; text-align:center; font size:29px; font-family:sans-serif;"> Miss one of our updates during the week?</h2>
+                      <h1 style="margin: 5px 0 5px; font-size: 22px; line-height: 30px; color: #837e7e; font-weight: normal;font-family: sans-serif;">No sweat-we'll recap all the highlights for you every Saturday morning.</h1>
+                      <h1 style="padding-top:25px; text-align:center; font size:35px; font-family:sans-serif;"> One small request before we get started:</h1>
+                        <h1 style="margin: 5px 0 5px; font-size: 22px; line-height: 30px; color: #837e7e; font-weight: normal;font-family: sans-serif;">Be sure to <span style="color:blue;text-decoration:underline"> add </span>
+                        <a href="#"> <b> newsletter@businessinsider.com </b> </span> </a> to your email contacts to make sure you never miss an update.</h1>
+                        <h1 style="padding-top:25px; text-align:center; font size:35px; font-family:sans-serif;"> And that's it!</h1>
+                          <h1 style="margin: 5px 0 5px; font-size: 22px; line-height: 30px; color: #837e7e; font-weight: normal;font-family: sans-serif;">We'll see you in your inbox soon.</h1>
+
+
+
+
+
+		            	</div>
+		            	<table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+
+		            	</table>
+		            </td>
+		          </tr><!-- end: tr -->
+		          <tr>
+		            <td class="bg_light email-section">
+		            	<div class="heading-section" style="text-align: center; padding: 0 30px;">
+		              	<h2>In the meantime, take a look around:</h2>
+
+		            	</div>
+		            	<table role="presentation" border="0" cellpadding="10" cellspacing="0" width="100%">
+
+                      <td valign="top" width="50%" style="padding-top: 20px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+
+                              <td style=padding="5px;" align="center">
+
+                              <img src="https://www.wanyichow.com/email/icon-twitter.png" padding-left="6px" width="20%" height="" alt="alt_text" border="0">
+                            	<button class="button5">Follow us on <b>Twitter</b></button> <a href="#"></a>
+
+                             </td>
+                          </tr>
+                        </table>
+                      </td>
+                      <td valign="top" width="50%" style="padding-top: 20px;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                    <tr>
+
+                              <td style=padding="5px;" align="center">
+
+                              <img src="https://www.wanyichow.com/email/icon-linkedin.png" padding-left="6px" width="20%" height="" alt="alt_text" border="0">
+                            	<a href="#"></a><button class="button5">connect on <b> Linkedin </b></button>
+
+                             </td>
+                          </tr>
+                        </table>
+                      </td>
+
+
+                    </tr>
+		            	</table>
+                  <table role="presentation" border="0" cellpadding="10" cellspacing="0" width="100%">
+                    <td valign="top" width="50%" style="padding-top: 20px;">
+                      <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                  <tr>
+
+                            <td style=padding="5px;" align="center">
+
+                            <img src="https://www.wanyichow.com/email/icon-4.png" padding-left="6px" width="20%" height="" alt="alt_text" border="0">
+                            <button class="button5"> Browse our <b> Report... </b></button><a href="#"></a>
+
+                           </td>
+                        </tr>
+                      </table>
+                    </td>
+
+                       <td valign="top" width="50%" style="padding-top: 20px;">
+                         <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                                     <tr>
+
+                               <td style=padding="5px;" align="center">
+
+                               <img src="https://www.wanyichow.com/email/icon-5.png" padding-left="6px" width="20%" height="" alt="alt_text" border="0">
+                              <button class="button5">Learn more about <b> BII </b></button><a href="#"></a>
+
+                              </td>
+                           </tr>
+                         </table>
+                       </td>
+
+
+                     </tr>
+                  </table>
+		            </td>
+
+		          </tr><!-- end: tr -->
+
+		        </table>
+
+		      </td>
+		    </tr><!-- end:tr -->
+      <!-- 1 Column Text + Button : END -->
+      </table>
+
+
+
+        <div class="heading-section" style="text-align: center; padding: 0 15px 30px 0;">
+            <h1 style="margin: 5px 0 5px; font-size: 19px; line-height: 30px; color: #837e7e; font-weight: normal;font-family: sans-serif;">Did you now that the Business Intelligence Daily is a preview of Business
+            Insider Intelligence? <a href="#"> <span style="color:blue;text-decoration:underline"> Learn more about our Premium membership </span> </a> to unlock research
+            reports, breifings, industry forecasts, exclusive data, and more.</h1>
+
+        </div>
+
+
+
+
+      <table align="center" role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="margin: auto;">
+      	<tr>
+          <td valign="middle" class="bg_black footer email-section">
+            <table>
+            	<tr>
+              <td valign="top" width="100%" style="padding-top: 20px;">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+                    <tr>
+                      <td style="text-align: center; padding-left: 5px; padding-right: 5px;">
+                        <img src="https://www.wanyichow.com/email/BIlogo.png" padding-left="6px" style="width:20%" height="" alt="alt_text" border="0">
+                      	<ul>
+                            <a href="mailto:johndoe@email.com" style="color:#ffffff; text-decoration:none;">Email sent to: johndoe@email.com</a>
+                            <a href="#" style="color:#ffffff; text-decoration:none;">Manage your email preferences &#124 Unsubscribe &#124 Terms of Service &#124 Privacy Policy </a>
+                            <a href="#" style="color:#ffffff; text-decoration:none;"> &#9400; 2019 Insider Inc. 1 Liberty Plaza, New York, NY 10006</a>
+
+					              </ul>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr><!-- end: tr -->
+        <tr>
+        	<td valign="middle" class="bg_black footer email-section">
+
+        	</td>
+        </tr>
+      </table>
+
+    </div>
+  </center>
+</body>
+</html>
